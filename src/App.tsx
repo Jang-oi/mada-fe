@@ -3,7 +3,7 @@ import {Route, Routes } from 'react-router-dom';
 import Main from "./pages/Main";
 import NotFound from "./pages/NotFound";
 import Keyword from "./pages/Keyword";
-import Date from "./pages/Date";
+import ProductDate from "./pages/ProductDate";
 import Review from "./pages/Review";
 
 import Header from "./components/menu/Header";
@@ -25,7 +25,7 @@ const App = () => {
                     <Routes>
                         <Route path='/' element={<Main/>}/>
                         <Route path='/keyword' element={<Keyword/>}/>
-                        <Route path='/date' element={<Date/>}/>
+                        <Route path='/date' element={<ProductDate/>}/>
                         <Route path='/review' element={<Review/>}/>
                         <Route path='*' element={<NotFound/>}/>
                     </Routes>

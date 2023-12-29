@@ -1,23 +1,63 @@
 import React from 'react';
 import SearchUrlTemplate from "../components/common/SearchUrlTemplate";
-import {useKeywordQuery} from "../hooks/useKeywordQuery";
 import {useRecoilValue} from "recoil";
-import {searchUrlState} from "../recoil/searchUrl/atom";
-import LoadingComponent from "../components/common/LoadingComponent";
+import {keywordState} from "../recoil/smartStore/atom";
 
 const Keyword = () => {
+    const keywordData = useRecoilValue(keywordState);
 
-    // const storageSearchUrl = useRecoilValue<string>(searchUrlState);
-    //
-    // const query = useKeywordQuery({url: storageSearchUrl});
-    //
-    // const {isInitialLoading, data, isLoading} = query;
-    // console.log(data, isInitialLoading, isLoading);
-    // if (isInitialLoading) return <LoadingComponent/>
+    console.log(keywordData);
 
     return (
         <>
             <SearchUrlTemplate title={'KEYWORD'}/>
+          {/*  <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell align='center' rowSpan={2}>연관 키워드</TableCell>
+                            <TableCell align='center' colSpan={2}>월간 검색 수</TableCell>
+                            <TableCell align='center' colSpan={2}>월평균 클릭 수</TableCell>
+                            <TableCell align='center' colSpan={2}>월평균 클릭 률</TableCell>
+                            <TableCell align='center' rowSpan={2}>경쟁 정도</TableCell>
+                            <TableCell align='center' rowSpan={2}>총 상품수</TableCell>
+                            <TableCell align='center' rowSpan={2}>월 평균노출 광고 수</TableCell>
+                            <TableCell align='center' rowSpan={2}>모바일 웹 클릭 합계</TableCell>
+                        </TableRow>
+                        <TableRow>
+                            <TableCell align='center'>PC</TableCell>
+                            <TableCell align='center'>모바일</TableCell>
+                            <TableCell align='center'>PC</TableCell>
+                            <TableCell align='center'>모바일</TableCell>
+                            <TableCell align='center'>PC</TableCell>
+                            <TableCell align='center'>모바일</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {tableData && tableData.map((data, index) => {
+                            setLocaleString(data);
+                            return (
+                                <TableRow
+                                    key={index}
+                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                >
+                                    <TableCell>{data.relKeyword}</TableCell>
+                                    <TableCell align='center'>{data.monthlyPcQcCnt}</TableCell>
+                                    <TableCell align='center'>{data.monthlyMobileQcCnt}</TableCell>
+                                    <TableCell align='center'>{data.monthlyAvePcClkCnt}</TableCell>
+                                    <TableCell align='center'>{data.monthlyAveMobileClkCnt}</TableCell>
+                                    <TableCell align='center'>{data.monthlyAvePcCtr}%</TableCell>
+                                    <TableCell align='center'>{data.monthlyAveMobileCtr}%</TableCell>
+                                    <TableCell align='center'>{data.compIdx}</TableCell>
+                                    <TableCell align='center'>{data.total}</TableCell>
+                                    <TableCell align='center'>{data.plAvgDepth}</TableCell>
+                                    <TableCell align='center'>{data.clkCntSum}</TableCell>
+                                </TableRow>
+                            );
+                        })}
+                    </TableBody>
+                </Table>
+            </TableContainer>*/}
         </>
     );
 };

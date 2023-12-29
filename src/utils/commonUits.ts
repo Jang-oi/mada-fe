@@ -17,6 +17,17 @@ export function formatDate(date: Date) {
     return `${year}-${month}-${day}`;
 }
 
+/**
+ * 숫자 세자리 컴마와 소수점 두자리 반올림
+ * @param setNumber
+ */
+export const setLocaleString = (setNumber : number) => {
+    const option = {
+        maximumFractionDigits: 2,
+    };
+    return (setNumber).toLocaleString('ko-KR', option);
+};
+
 export const menuData: MenuTypes[] = [
     {menu: 'HOME', url: '/'},
     {menu: 'KEYWORD', url: '/keyword'},
